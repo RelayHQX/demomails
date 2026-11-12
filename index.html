@@ -1,88 +1,244 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light">
   <title>Order Confirmation</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      background: #f3f4f6;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #171717;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .email-wrapper {
+      width: 100%;
+      min-height: 100vh;
+      padding: 24px 12px;
+      background: #f3f4f6;
+    }
+
+    .email-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 32px;
+      background: #ffffff;
+      border-radius: 8px;
+    }
+
+    .brand {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .status {
+      margin-top: 28px;
+      color: #16a34a;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: .5px;
+    }
+
+    h1 {
+      font-size: 28px;
+      line-height: 1.25;
+      margin: 12px 0;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .muted {
+      color: #666666;
+    }
+
+    .order-box,
+    .delivery-box {
+      padding: 18px;
+      margin: 24px 0;
+      background: #f9fafb;
+      border-radius: 6px;
+    }
+
+    .order-label {
+      color: #888888;
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .product-table td {
+      padding: 12px 4px;
+      vertical-align: top;
+    }
+
+    .price-table td {
+      padding: 7px 4px;
+    }
+
+    .right {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .divider {
+      border: 0;
+      border-top: 1px solid #eeeeee;
+      margin: 20px 0;
+    }
+
+    .track-button {
+      display: block;
+      padding: 15px;
+      margin-top: 24px;
+      background: #171717;
+      color: #ffffff !important;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #aaaaaa;
+      font-size: 11px;
+    }
+
+    @media screen and (max-width: 480px) {
+      .email-wrapper {
+        padding: 0;
+      }
+
+      .email-container {
+        padding: 22px 18px;
+        border-radius: 0;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+
+      .order-box,
+      .delivery-box {
+        padding: 14px;
+      }
+    }
+  </style>
 </head>
-<body style="margin:0;background:#f3f4f6;font-family:Arial,sans-serif;color:#171717;">
-  <div style="max-width:600px;margin:30px auto;background:#ffffff;padding:32px;">
 
-    <div style="font-size:24px;font-weight:bold;letter-spacing:-1px;">
-      northstar
-    </div>
+<body>
+  <div class="email-wrapper">
+    <main class="email-container">
 
-    <p style="color:#16a34a;font-size:12px;font-weight:bold;">
-      ORDER CONFIRMED
-    </p>
+      <div class="brand">northstar</div>
 
-    <h1 style="font-size:28px;">Thanks for your order!</h1>
+      <div class="status">ORDER CONFIRMED</div>
 
-    <p style="color:#666;line-height:1.6;">
-      Hi Soham, we've received your order and are getting
-      it ready for shipment.
-    </p>
+      <h1>Thanks for your order!</h1>
 
-    <div style="background:#f9fafb;padding:18px;margin:24px 0;">
-      <small style="color:#888;">ORDER NUMBER</small>
-      <h3>#ORD-2026-847291</h3>
-      <p style="color:#777;font-size:13px;">
-        November 12, 2026
+      <p class="muted">
+        Hi Soham, we've received your order and are getting
+        it ready for shipment.
       </p>
-    </div>
 
-    <table width="100%" cellpadding="8">
-      <tr>
-        <td>
-          <strong>Studio Wireless Headphones</strong><br>
-          <small>Midnight Black · SKU: NS-WH-204</small>
-        </td>
-        <td align="right">₹2,499.00</td>
-      </tr>
-    </table>
+      <div class="order-box">
+        <div class="order-label">ORDER NUMBER</div>
+        <h3>#ORD-2026-847291</h3>
+        <p class="muted" style="font-size:13px;">
+          November 12, 2026
+        </p>
+      </div>
 
-    <hr style="border:0;border-top:1px solid #eee;">
+      <table class="product-table">
+        <tr>
+          <td>
+            <strong>Studio Wireless Headphones</strong><br>
+            <small class="muted">
+              Midnight Black · SKU: NS-WH-204
+            </small>
+          </td>
+          <td class="right">₹2,499.00</td>
+        </tr>
+      </table>
 
-    <table width="100%" cellpadding="7">
-      <tr>
-        <td>Subtotal</td>
-        <td align="right">₹2,499.00</td>
-      </tr>
-      <tr>
-        <td>Shipping</td>
-        <td align="right">₹50.00</td>
-      </tr>
-      <tr>
-        <td>GST (18%)</td>
-        <td align="right">₹458.82</td>
-      </tr>
-      <tr>
-        <td><strong>Total paid</strong></td>
-        <td align="right"><strong>₹3,007.82</strong></td>
-      </tr>
-    </table>
+      <hr class="divider">
 
-    <div style="background:#f9fafb;padding:18px;margin-top:24px;">
-      <h3>Delivery details</h3>
-      Soham Pramanik<br>
-      Siliguri, West Bengal, India<br><br>
+      <table class="price-table">
+        <tr>
+          <td>Subtotal</td>
+          <td class="right">₹2,499.00</td>
+        </tr>
+        <tr>
+          <td>Shipping</td>
+          <td class="right">₹50.00</td>
+        </tr>
+        <tr>
+          <td>GST (18%)</td>
+          <td class="right">₹458.82</td>
+        </tr>
+        <tr>
+          <td><strong>Total paid</strong></td>
+          <td class="right">
+            <strong>₹3,007.82</strong>
+          </td>
+        </tr>
+      </table>
 
-      <strong>Payment:</strong> UPI<br>
-      <strong>Transaction ID:</strong> UPI84729162026<br>
-      <strong>Expected delivery:</strong>
-      November 16–18, 2026
-    </div>
+      <div class="delivery-box">
+        <h3>Delivery details</h3>
 
-    <div style="background:#171717;color:#fff;text-align:center;
-                padding:15px;margin-top:24px;">
-      Track your order
-    </div>
+        <p class="muted">
+          <strong>Soham Pramanik</strong><br>
+          Siliguri, West Bengal, India
+        </p>
 
-    <p style="text-align:center;color:#aaa;font-size:11px;margin-top:30px;">
-      Northstar Store · Automated confirmation email
-    </p>
+        <p class="muted">
+          <strong>Payment:</strong> UPI<br>
+          <strong>Transaction ID:</strong> UPI84729162026<br>
+          <strong>Expected delivery:</strong><br>
+          November 16–18, 2026
+        </p>
+      </div>
 
+      <a href="#" class="track-button">
+        Track your order
+      </a>
+
+      <div class="footer">
+        Northstar Store · Automated confirmation email
+      </div>
+
+    </main>
   </div>
 </body>
 </html>
